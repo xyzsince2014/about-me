@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import AnimatedCursor from 'react-animated-cursor';
+
+import Navigation from './components/Navigation';
+
+const App: React.FC = () => (
+  <div>
+    <head>
+      <Navigation/>
+    </head>
+    <body>
+      <div>Ryuta Yamamoto</div>
+      <div>Web Developer</div>
+      <a href="/">Github</a>
+      <a href="/">Linked-in</a>
+    </body>
+    <footer>Footer</footer>
+    <AnimatedCursor innerSize={20} outerSize={40}/>
+  </div>
+);
 
 export default App;
