@@ -3,19 +3,17 @@ import React from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 
 import Navigation from './components/Navigation';
+import Contents from './components/Contents';
 
 const App: React.FC = () => (
-  <div>
-    <head>
+  <div className="l-app">
+    <header>
       <Navigation/>
-    </head>
+    </header>
     <body>
-      <div>Ryuta Yamamoto</div>
-      <div>Web Developer</div>
-      <a href="/">Github</a>
-      <a href="/">Linked-in</a>
+      <Contents/>
     </body>
-    <footer>Footer</footer>
+    {/* <footer>Footer</footer> */}
     <AnimatedCursor innerSize={20} outerSize={40}/>
   </div>
 );

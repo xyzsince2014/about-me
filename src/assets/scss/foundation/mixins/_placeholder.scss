@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@mixin placeholder($colour) {
+  &::placeholder {
+    color: $colour;
+  }
+
+  // Edge
+  &::-ms-input-placeholder {
+    color: $colour;
+  }
+
+  // IE
+  &:-ms-input-placeholder {
+    color: $colour;
+  }
+}

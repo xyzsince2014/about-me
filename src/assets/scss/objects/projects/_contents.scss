@@ -1,0 +1,128 @@
+@charset 'UTF-8';
+
+@use 'foundation' as f;
+
+@mixin _anime($key, $scale-min, $scale-max) {
+  @keyframes _anime-#{$key} {
+    0% {
+      opacity: .8;
+      transform: scale($scale-min);
+    }
+    100% {
+      opacity: 1;
+      transform: scale($scale-max);
+    }
+  }
+}
+
+@include _anime('medium', .9, 1.5);
+
+.p-contents {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__namecard {
+    & > p:nth-child(1) {
+      position: absolute;
+      font-size: 3rem;
+      width: 90%;
+
+      @include f.view-at('s') {
+        top: 45%;
+        left: 10%;
+      }
+    
+      @include f.view-at('p') {
+        top: 40%;
+        left: 40%;
+      }
+    }
+
+    & > p:nth-child(2) {
+      position: absolute;
+      font-size: 2rem;
+
+      @include f.view-at('s') {
+        bottom: 40%;
+        right: 10%;
+      }
+    
+      @include f.view-at('p') {
+        top: 50%;
+        left: 50%;
+      }
+    }
+  }
+
+  &__item {
+    position: absolute;
+    width: 100px;
+    border-radius: 50%;
+    display: grid;
+    height: 100px;
+    opacity: .5;
+    place-items: center;
+    transition: 1s ease;
+    cursor: pointer;
+
+    & > a {
+      display: inline-block;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &--gmail {
+      background: #fed5cf;
+      animation: _anime-medium 6s ease-in infinite alternate;
+
+      @include f.view-at('s') {
+        top: 15%;
+        left: 10%;
+      }
+    
+      @include f.view-at('p') {
+        top: 30%;
+        left: 20%;
+      }
+
+      & > a > img {
+        width: 45%;
+        height: 45%;
+      }
+    }
+
+    &--github {
+      background: #fcc98a;
+      animation: _anime-medium 7s ease-in infinite alternate;
+
+      @include f.view-at('s') {
+        top: 20%;
+        right: 10%;
+      }
+    
+      @include f.view-at('p') {
+        top: 30%;
+        left: 80%;
+      }
+
+      & > a > img {
+        width: 55%;
+        height: 55%;
+      }
+    }
+
+    &--linkedin {
+      bottom: 15%;
+      right: 40%;
+      background: #a2c8ee;
+      animation: _anime-medium 4.5s ease-in infinite alternate;
+
+      & > a > img {
+        border-radius: 4px;
+        width: 45%;
+        height: 45%;
+      }
+    }
+  }
+}
