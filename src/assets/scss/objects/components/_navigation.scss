@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+
+@use 'foundation' as f;
+
+.c-navigation {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50px;
+
+  @include f.view-at('s') {
+    justify-content: space-evenly;
+  }
+
+  @include f.view-at('p') {
+    justify-content: right;
+  }
+
+
+  & > li {
+    height: 100%;
+    width: 150px;
+
+    background-color: f.$colour-white;
+    display: -webkit-box;
+    -webkit-box-align: center;
+
+    & > a {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
