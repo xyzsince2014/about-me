@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@use '../variables/layout' as l;
+
+@mixin view-at($mode, $breakpoint: l.$min-width-pc-view) {
+  @if ($mode == 's') {
+    @media (max-width: $breakpoint - 1) {
+      @content;
+    }
+  }
+
+  @else if($mode == 'p') {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
