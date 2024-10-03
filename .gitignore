@@ -14,7 +14,9 @@ public/report.html
 
 # production
 /build
-/public
+/public/**/*.js.LICENSE.txt
+/public/**/*.js.map
+/public/report.html
 
 # misc
 .DS_Store
